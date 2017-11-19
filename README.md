@@ -8,3 +8,6 @@ A [brief slideshow presentation](https://docs.google.com/presentation/d/1b_1pT_N
 
 ## Resources
  * [Best Apps and Websites for Learning Programming](https://www.commonsense.org/education/top-picks/best-apps-and-websites-for-learning-programming-and-coding)
+ 
+## How does this work?
+This repository contains a small python program that scrapes information from the school lunch calendar and displays it, along with a few links and pictures. It is deployed to heroku and built using a lightweight python web framework called Flask. 
