@@ -1,4 +1,5 @@
 import unittest
+import os
 from scraper import scrape_menu
 from datetime import datetime
 
@@ -12,9 +13,15 @@ class TestScrape(unittest.TestCase):
 
         current_time = datetime.now()
 
-        test = scrape_menu(current_time)
-        print(test)
-        # self.assertEqual('oceans', analysis.pre_tag)
+        current_path = os.path.realpath(
+            os.path.join(os.getcwd(), os.path.dirname(__file__))
+        )
+        test_file = os.path.join(current_path, 'calendarcontent.html')
+        with open(test_file, 'r') as opened_file:
+            testcontent = opened_file.read()
+
+        test = scrape_menu(current_time, testcontent)
+        self.assertIn('Spaghetti', str(test))
 
 
 if __name__ == '__main__':
