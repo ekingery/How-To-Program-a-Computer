@@ -14,6 +14,8 @@ A [brief slideshow presentation](https://docs.google.com/presentation/d/1b_1pT_N
 
  * [Introduction to Simple Web Applications with Flask](http://www.compjour.org/lessons/flask-single-page/)
 
+ * [Learn more about Margaret Hamilton](https://en.wikipedia.org/wiki/Margaret_Hamilton_(scientist))
+
 ## How does this work?
 A small python app scrapes information from the school lunch calendar and displays it, along with data from a weather API. It is [deployed to heroku](https://devcenter.heroku.com/articles/getting-started-with-python) and built using a [lightweight python web framework called Flask](http://flask.pocoo.org). It also uses:
  * [Paper CSS Framework](https://www.getpapercss.com) for style / design of the html markup.
