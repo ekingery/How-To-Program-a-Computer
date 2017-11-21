@@ -39,11 +39,14 @@ def homepage():
         'high': int(nextday.d['temperatureMax']),
         'low': int(nextday.d['temperatureMin'])
     }
+    summary = 'Currently ' + current.summary + '. ' + \
+        hourly.summary + '. ' + daily.summary
 
     # Return the html markup we use to serve the page
     return render_template(
-        'index.html', date=formatted_date, menu_items=items,
-        hourly_weather=hourly, current_weather=current, temp=temp
+        'index.html', date=formatted_date, menu_items=items, temp=temp,
+        weather_icon=current.icon, weather_summary=summary,
+        current_summary=current.summary
     )
 
 
