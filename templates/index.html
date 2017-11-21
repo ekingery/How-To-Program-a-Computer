@@ -1,60 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="refresh" content="300">
-    <link rel="stylesheet" href="https://unpkg.com/papercss@1.1.0/dist/paper.min.css">
-    <title>Smines City</title>
-  </head>
-  <body>
-    <div class="paper container">
-      <h1 style="text-align:center">Smines City</h1>
-      <h2 style="text-align:center">Technology Capital of Mann School</h2>
-      <p>This page was created for the kids as part of a
-      <a href="https://docs.google.com/presentation/d/1b_1pT_NTi1K51UKJafgZk6ReqeyPi49H2iAuveSjHaE/edit?usp=sharing">career day presentation on computer programming</a>.
-      The code and some links on learning to program are <a href="https://github.com/ekingery/How-To-Program-a-Computer">available on Github</a>.
-      Please note this is not the <a href="http://www.op97.org/~esmith@op97.org/smines-city-website">Official Smines City Website</a>, which contains much more content and information.</p>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta http-equiv="refresh" content="300">
+		<link rel="stylesheet" href="/static/css/paper.min.css">
+		<title>Smines City</title>
+		<script src="/static/js/skycons.js"></script>
+	</head>
+	<body>
+		<div class="paper container">
+			<h1 style="text-align:center">Smines City</h1>
+			<h2 style="text-align:center">Tech Capital of Mann School, USA</h2>
+			<p>This page was created for the kids as part of a
+			<a href="https://docs.google.com/presentation/d/1b_1pT_NTi1K51UKJafgZk6ReqeyPi49H2iAuveSjHaE/edit?usp=sharing">career day presentation on computer programming</a>.
+			The code and some links on learning to program are <a href="https://github.com/ekingery/How-To-Program-a-Computer">available on Github</a>.
+			Please note this is not the <a href="http://www.op97.org/~esmith@op97.org/smines-city-website">Official Smines City Website</a>, which contains much more content and information.</p>
 
-      <div class="row flex-spaces">
-        <!-- Lunch card -->
-        <div class="sm-4 col">
-          <div class="card" style="width: 16rem;">
-            <img src="https://i.pinimg.com/originals/de/f0/63/def06335fe7d39aaea17299819806cd6.jpg" alt="food">
-            <div class="card-body">
-              <h4 class="card-title" style="text-align:center">What's for lunch?</h4>
-              <h5 class="card-subtitle" style="text-align:center">{{date}}</h5>
-              <ul style="padding-left: 10px;">
-                {% for item in menu_items %}
-                  <li>{{ item }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- /Lunch card -->
+			<div class="row flex-spaces">
+				<!-- Lunch card -->
+				<div class="sm-4 col">
+					<div class="card" style="width: 16rem;">
+						<img src="/images/food1.jpg" alt="food">
+						<div class="card-body">
+							<h4 class="card-title" style="text-align:center">What's for lunch?</h4>
+							<h5 class="card-subtitle" style="text-align:center">{{date}}</h5>
+							<ul style="padding-left: 10px;">
+								{% for item in menu_items %}
+								<li>{{ item }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /Lunch card -->
 
-        <!-- Weather card -->
-        <div class="sm-4 col">
-          <div class="card" style="width: 16rem;">
-            <img src="http://boothamphitheatre.com/wp-content/uploads/2016/02/dc6o4KBc9.png" alt="weather">
-            <div class="card-body">
-              <h4 class="card-title" style="text-align:center">How's the Weather?</h4>
-              <h5 class="card-subtitle" style="text-align:center">{{date}}</h5>
-              <p class="card-text">then the text goes here,
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- /Weather card -->
+				<!-- Weather card -->
+				<div class="sm-4 col">
+					<div class="card" style="width: 16rem;">
+						<div class="card-body" style="text-align:center">
+							<!-- skycons: https://github.com/darkskyapp/skycons -->
+							<canvas class="{{hourly_weather.icon}}" width="160" height="160"></canvas>
+              <br /> <br />
+              <h4 class="card-title"
+                popover="{{hourly_weather.data[0].summary}}" popover-position="top">How's the Weather?</h4>
+              <div class="row">
+                <div class="col-4 col background-primary">
+                  <strong>temp: {{temp['now']}}&deg; F</strong>
+                </div>
+                <div class="col-4 col background-warning">
+                  high: {{temp['high']}}
+                </div>
+                <div class="col-4 col background-secondary">
+                  low: {{temp['low']}}
+                </div>
+              </div>
+							<p class="card-text">{{hourly_weather.summary}}</p>
+							<a href="https://darksky.net/poweredby/">
+								<img class="image-bottom" width="180px" height="40px" src="https://darksky.net/dev/img/attribution/poweredby-oneline.png"/>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- /Weather card -->
 
-      </div>
-      <p style="text-align:center">
-      <span style="margin:0px" popover="now_dt = datetime.now().astimezone(tz=pytz.timezone('US/Central'))" popover-position="bottom">Page loaded on </span>
-      <span style="margin:0px" popover="date = now_dt.strftime('%A, %B %d')" popover-position="bottom">{{date}}</span>
-      <span style="margin:0px" popover="time = now_dt.strftime('%l:%M %p')" popover-position="bottom"> at {{time}}.</span>
-      </p>
-    </div>
-  </body>
+			</div>
+		</div>
+		<!-- The skycons js failed higher in the doc -->
+		<script>
+var skycons = new Skycons({"color": "#0071de"});
+var skycons_list  = [
+	"clear-day", "clear-night", "rain", "snow", "sleet", "wind",
+	"fog", "cloudy", "partly-cloudy-day", "partly-cloudy-night"
+];
+var i;
+
+for(i = skycons_list.length; i--;) {
+	var weatherType = skycons_list[i],
+		elements = document.getElementsByClassName(weatherType);
+	for (e = elements.length; e--;){
+		skycons.set(elements[e], weatherType);
+	}
+}
+skycons.play();
+		</script>
+	</body>
 </html>
