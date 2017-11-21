@@ -8,6 +8,8 @@ import pytz  # timezones
 
 # load the flask web framework, along with the templating module for html
 from flask import Flask, render_template, send_from_directory
+# redirect the non-secure (http) version to https
+from flask_sslify import SSLify
 
 # load our own functions from the codebase
 from util import date_to_display
@@ -16,6 +18,7 @@ from weather import get_weather
 
 # define the application as a flask object
 app = Flask(__name__)
+sslify = SSLify(app)
 
 
 # Serve a web page at the root of the URL
@@ -48,6 +51,12 @@ def homepage():
 @app.route('/images/<path:path>')
 def serve_images(path):
     return send_from_directory('static/images', path)
+
+
+# Serve favicon
+@app.route('/favicon.ico')
+def serve_favicon():
+    return send_from_directory('static/images', 'favicon.png')
 
 
 # Serve css locally
