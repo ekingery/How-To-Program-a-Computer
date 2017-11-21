@@ -80,8 +80,16 @@ def menu_for_day(menu_table, day):
 def format_items(menu):
     menu_items = []
     for item in menu:
-        if (type(item)) is bs4.element.NavigableString:
+        if type(item) is bs4.element.NavigableString:
+            # cast to a string and strip spacing
             menu_items.append(str(item).strip())
+        elif type(item) is bs4.element.Tag:
+            if len(item.contents) > 0:
+                # cast contents to a string and strip spacing
+                menu_items.append(str(item.contents[0].strip()))
+
+    # remove empty strings
+    menu_items = list(filter(None, menu_items))
     return menu_items
 
 
