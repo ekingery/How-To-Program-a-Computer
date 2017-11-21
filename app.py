@@ -43,7 +43,7 @@ def homepage():
     # Return the html markup we use to serve the page
     return render_template(
         'index.html', date=formatted_date, menu_items=items,
-        hourly_weather=hourly, temp=temp
+        hourly_weather=hourly, current_weather=current, temp=temp
     )
 
 

@@ -43,7 +43,7 @@
 							<canvas class="{{hourly_weather.icon}}" width="160" height="160"></canvas>
               <br /> <br />
               <h4 class="card-title"
-                popover="{{hourly_weather.data[0].summary}}" popover-position="top">How's the Weather?</h4>
+                popover="{{current_weather.summary}}" popover-position="top">How's the Weather?</h4>
               <div class="row">
                 <div class="col-4 col background-secondary">
                   low: {{temp['low']}}
@@ -55,7 +55,10 @@
                   high: {{temp['high']}}
                 </div>
               </div>
-							<p class="card-text">{{hourly_weather.summary}}</p>
+							<p class="card-text">
+                {{current_weather.summary}}.<br />
+                {{hourly_weather.summary}}
+              </p>
 							<a href="https://darksky.net/poweredby/">
 								<img class="image-bottom" width="180px" height="40px" src="https://darksky.net/dev/img/attribution/poweredby-oneline.png"/>
 							</a>
