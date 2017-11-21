@@ -43,7 +43,7 @@ provides a good example of how to use pseudocode to arrive at a solution.
 #### Function 1. Find the next relevant menu day
 Use this logic (in order) to determine what day's menu we want to display.
 This assumes that the school calendar always displays all weekdays in the month.
-You can find this pseudocode implemented in the [date_to_display function](./scraper.py#L5).
+You can find this pseudocode implemented in the [date_to_display function](./util.py#L4).
 ```
  * Make a call to the date / time library to find out what day it is.
  * If it is between 11am on Friday and 11am on Monday, we are likely interestedin Monday's menu.
@@ -54,7 +54,7 @@ You can find this pseudocode implemented in the [date_to_display function](./scr
 
 #### Function 2. Look up the menu item corresponding with a menu day
 Once we know the day of the month we are interested in, we need to
-pull the menu for that day from the calendar. The calendar is [represented as an html table element](./tests/calendarcontent.html#L738). This means the [table is composed](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics) of rows `<tr>` and data `<td>` elements. You can find this pseudocode implemented in the [menu_for_day function](./scraper.py#L37).
+pull the menu for that day from the calendar. The calendar is [represented as an html table element](./tests/calendarcontent.html#L738). This means the [table is composed](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics) of rows `<tr>` and data `<td>` elements. You can find this pseudocode implemented in the [menu_for_day function](./scraper.py#L6).
 
 On a side note, [Web APIs](https://www.programmableweb.com/news/what-api-exactly/analysis/2015/12/03) are popular because they often provide this type of data without the need to scrape pages, etc. For example, this application uses a [weather API](https://darksky.net/dev) to display the day's weather.
 ```
