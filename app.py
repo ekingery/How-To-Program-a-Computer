@@ -8,6 +8,10 @@ import pytz  # timezones
 
 # load the flask web framework, along with the templating module for html
 from flask import Flask, render_template
+
+# load our scraper code
+from scraper import scrape_menu
+
 # define the application as a flask object
 app = Flask(__name__)
 
@@ -20,9 +24,12 @@ def homepage():
     formatted_date = current_dt.strftime("%A, %B %d")
     formatted_time = current_dt.strftime("%l:%M %p")
 
+    items = scrape_menu(current_dt)
+
     # Return the html markup we use to serve the page
     return render_template(
-        'index.html', date=formatted_date, time=formatted_time
+        'index.html',
+        date=formatted_date, time=formatted_time, menu_items=items
     )
 
 

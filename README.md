@@ -34,7 +34,7 @@ provides a good example of how to use pseudocode to arrive at a solution.
 Use this logic (in order) to determine what day's menu we want to display. 
 This assumes that the school calendar always displays all weekdays in the month.
 ```
- * Make a call to the date / time library to find out what day it is
+ * Make a call to the date / time library to find out what day it is.
  * If it is between 11am on Friday and 11am on Monday, we are likely interested in Monday's menu.
  * If it is before 11am on a weekday, we are likely interested in the current day's menu.
  * If it is after 11am on a weekday, we are likely interested in the next day's menu.
@@ -43,13 +43,13 @@ This assumes that the school calendar always displays all weekdays in the month.
 
 #### Function 2. Look up the menu item corresponding with a menu day
 Once we know the day of the month we are interested in, we need to
-pull the menu for that day from the calendar. The calendar is [represented as an html <table> element](./tests/calendarcontent.html#L738). This means the [table is composed](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics) of rows (`<tr>`) and data (`<td>`) elements.
+pull the menu for that day from the calendar. The calendar is [represented as an html table element](./tests/calendarcontent.html#L738). This means the [table is composed](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics) of rows `<tr>` and data `<td>` elements.
 
-On a side note, [Web APIs](https://www.programmableweb.com/news/what-api-exactly/analysis/2015/12/03) are popular because they often provide this type of data without the need to scrape pages, etc. For example, this application uses a weather API to display the day's weather.
+On a side note, [Web APIs](https://www.programmableweb.com/news/what-api-exactly/analysis/2015/12/03) are popular because they often provide this type of data without the need to scrape pages, etc. For example, this application uses a [weather API](https://darksky.net/dev) to display the day's weather.
 ```
- * Search for a <td> with data equal to the day we are interested in
-   * If it is not found, search for the next highest day
- * Store the position of the found <td> element, where 1-5 correspond to M-F
- * Access the next <tr> and pull the data from the <td> in the position stored above
- * Return this menu data to the interface
+ * Search for a <td> with data equal to the day we are interested in.
+   * If it is not found, search for the next highest day.
+ * Store the position of the found <td> element, where 1-5 correspond to M-F.
+ * Access the next <tr> and pull the data from the <td> in the position stored above.
+ * Return the day's menu data to the user interface for display.
 ```

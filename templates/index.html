@@ -23,14 +23,12 @@
           <div class="card" style="width: 16rem;">
             <img src="https://i.pinimg.com/originals/de/f0/63/def06335fe7d39aaea17299819806cd6.jpg" alt="food">
             <div class="card-body">
-              <h4 class="card-title">What's for lunch?</h4>
-              <h5 class="card-subtitle">{{date}}</h5>
-              <ul>
-                <li>Spaghetti and Meatballs</li>
-                <li>Dinner Roll</li>
-                <li>Spinach Salad with Italian Dressing</li>
-                <li>Red Delicious Apple</li>
-                <li>Milk</li>
+              <h4 class="card-title" style="text-align:center">What's for lunch?</h4>
+              <h5 class="card-subtitle" style="text-align:center">{{date}}</h5>
+              <ul style="padding-left: 10px;">
+                {% for item in menu_items %}
+                  <li>{{ item }}</li>
+                {% endfor %}
               </ul>
             </div>
           </div>
@@ -42,8 +40,8 @@
           <div class="card" style="width: 16rem;">
             <img src="http://boothamphitheatre.com/wp-content/uploads/2016/02/dc6o4KBc9.png" alt="weather">
             <div class="card-body">
-              <h4 class="card-title">How's the Weather?</h4>
-              <h5 class="card-subtitle">todo - weather headline goes here</h5>
+              <h4 class="card-title" style="text-align:center">How's the Weather?</h4>
+              <h5 class="card-subtitle" style="text-align:center">{{date}}</h5>
               <p class="card-text">then the text goes here,
               </p>
             </div>
