@@ -8,7 +8,7 @@ import pytz  # timezones
 
 # load the flask web framework, along with the templating module for html
 from flask import Flask, render_template, send_from_directory
-# redirect the non-secure (http) version to https
+# package that redirects non ssl (http) requests to ssl (https)
 from flask_sslify import SSLify
 
 # load our own functions from the codebase
@@ -18,7 +18,7 @@ from weather import get_weather
 
 # define the application as a flask object
 app = Flask(__name__)
-sslify = SSLify(app)
+sslify = SSLify(app)  # redirect the non-secure (http) version to https
 
 
 # Serve a web page at the root of the URL
