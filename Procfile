@@ -1,1 +1,1 @@
-web: gunicorn app:smines_city --log-file=-
+web: gunicorn smines_city:app --log-file=-
