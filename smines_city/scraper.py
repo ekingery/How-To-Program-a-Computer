@@ -1,6 +1,6 @@
 import requests
 import bs4
-from util import date_to_display
+from smines_city.util import date_to_display
 
 
 def menu_for_day(menu_table, day):

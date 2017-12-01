@@ -1,9 +1,9 @@
 import unittest
 import os
 import pytz
-from scraper import scrape_menu
-from util import date_to_display
 from datetime import datetime
+from smines_city.scraper import scrape_menu
+from smines_city.util import date_to_display
 
 
 class TestScrape(unittest.TestCase):

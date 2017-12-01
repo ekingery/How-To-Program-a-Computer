@@ -1,24 +1,15 @@
-# Comments start with # and are used to explain the code
-# to other programmers and often to your future self
-# They are ignored by the programming language
-
+# load a couple of flask functions for templates and file serving
+from flask import render_template, send_from_directory
 # load modules for dealing with dates and times
 from datetime import datetime
 import pytz  # timezones
 
-# load the flask web framework, along with the templating module for html
-from flask import Flask, render_template, send_from_directory
-# package that redirects non ssl (http) requests to ssl (https)
-from flask_sslify import SSLify
-
-# load our own functions from the codebase
-from util import date_to_display
-from scraper import scrape_menu
-from weather import get_weather
-
-# define the application as a flask object
-app = Flask(__name__)
-sslify = SSLify(app)  # redirect the non-secure (http) version to https
+# import the app so we can register routes to serve
+from smines_city import app
+# load our own functions from the smines_city module
+from smines_city.util import date_to_display
+from smines_city.scraper import scrape_menu
+from smines_city.weather import get_weather
 
 
 # Serve a web page at the root of the URL
@@ -72,9 +63,3 @@ def serve_css(path):
 @app.route('/js/<path:path>')
 def serve_js(path):
     return send_from_directory('static/js', path)
-
-
-# This is known as boilerplate code
-# This particular boilerplate runs the application when you run `python app.py`
-if __name__ == '__main__':
-    app.run()

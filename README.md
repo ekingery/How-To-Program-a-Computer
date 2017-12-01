@@ -22,7 +22,7 @@ A [brief slideshow presentation](https://docs.google.com/presentation/d/1b_1pT_N
  * [Introduction to Simple Web Applications (like this one) with Flask](http://www.compjour.org/lessons/flask-single-page/)
 
 ## How does this work?
-A small python app scrapes information from the school lunch calendar and displays it, along with data from a weather API. It is [deployed to heroku](https://devcenter.heroku.com/articles/getting-started-with-python) and built using a [lightweight python web framework called Flask](http://flask.pocoo.org). It also uses:
+This python module (smines_city) scrapes information from the school lunch calendar and displays it, along with data from a weather API. It is [deployed to heroku](https://devcenter.heroku.com/articles/getting-started-with-python) and built using a [lightweight python web framework called Flask](http://flask.pocoo.org). It also uses:
  * [Paper CSS Framework](https://www.getpapercss.com) for style / design of the html markup.
  * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) for scraping data from the calendar page.
  * [Dark Sky API package](https://github.com/ZeevG/python-forecast.io) and [Skycons](https://blog.darksky.net/skycons-unobtrustive-animated-weather-icons/).
@@ -30,10 +30,10 @@ A small python app scrapes information from the school lunch calendar and displa
 
 ### Local Development
 You can start a local flask server with this command:
-`FLASK_APP=app.py FLASK_DEBUG=1 DARKSKY_API_KEY=<your_key> flask run
+`FLASK_APP=smines_city/__init__.py FLASK_DEBUG=1 DARKSKY_API_KEY=<your_key> flask run`
 
 ### Tests
-Tests can be run using the `nosetests` command.
+Tests can be run using the `pytest` command.
 
 ### Pseudocode
 Parsing the calendar on the school lunch table is a good example of a common
