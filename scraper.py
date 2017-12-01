@@ -54,8 +54,10 @@ def format_items(menu):
             menu_items.append(str(item).strip())
         elif type(item) is bs4.element.Tag:
             if len(item.contents) > 0:
-                # cast contents to a string and strip spacing
-                menu_items.append(str(item.contents[0].strip()))
+                for content in item.contents:
+                    if type(content) is bs4.element.NavigableString:
+                        # cast contents to a string and strip spacing
+                        menu_items.append(str(content.strip()))
 
     # remove empty strings
     menu_items = list(filter(None, menu_items))
