@@ -18,6 +18,7 @@ A [brief slideshow presentation](https://docs.google.com/presentation/d/1b_1pT_N
    Process](https://www.youtube.com/playlist?list=PLhz12vamHOnZ4ZDC0dS6C9HRN5Qrm0jHO)
 
  * [Learn more about Margaret Hamilton](https://en.wikipedia.org/wiki/Margaret_Hamilton_(scientist))
+   * [Margaret and the Moon](https://www.penguinrandomhouse.com/books/536667/margaret-and-the-moon-by-dean-robbins-illustrated-by-lucy-knisley/9780399551857/) is an outstanding book!
 
  * [Introduction to Simple Web Applications (like this one) with Flask](http://www.compjour.org/lessons/flask-single-page/)
 
