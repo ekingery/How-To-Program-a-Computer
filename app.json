@@ -1,0 +1,11 @@
+{
+  "name": "How to Program a Computer",
+  "description": "Website developed as part of a brief presentation on programming to a kindergarten classroom.",
+  "keywords": [
+    "flask",
+    "python",
+    "sample"
+  ],
+  "repository": "https://github.com/michaelsmanley/How-To-Program-a-Computer",
+  "addons": [ ]
+}
