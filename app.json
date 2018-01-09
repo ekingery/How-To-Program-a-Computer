@@ -6,7 +6,7 @@
     "python",
     "sample"
   ],
-  "repository": "https://github.com/ekingery/How-To-Program-a-Computer",
+  "repository": "https://github.com/michaelsmanley/How-To-Program-a-Computer",
   "addons": [
     "heroku-postgresql"
   ]
