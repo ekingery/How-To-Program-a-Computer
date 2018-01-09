@@ -22,7 +22,7 @@ def homepage():
 
     # check the weather first
     forecast = get_weather(display_date)
-    if forecast is None
+    if forecast is None:
         return render_template('notready.html')
 
     current = forecast.currently()
