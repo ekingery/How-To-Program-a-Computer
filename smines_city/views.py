@@ -16,9 +16,6 @@ from smines_city.weather import get_weather
 # Serve a web page at the root of the URL
 @app.route('/')
 def homepage():
-    # check for the one and only confg var we need
-
-    
     # This is the main function that serves the web page
     current_dt = datetime.now().astimezone(tz=pytz.timezone('US/Central'))
     display_date = date_to_display(current_dt)
@@ -26,6 +23,9 @@ def homepage():
 
     # check the weather first
     forecast = get_weather(display_date)
+    if forecast is None
+        return render_template('notready.html')
+
     current = forecast.currently()
     hourly = forecast.hourly()
     daily = forecast.daily()
