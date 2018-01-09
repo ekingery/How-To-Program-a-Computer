@@ -39,15 +39,15 @@ Tests can be run using the `pytest` command.
 ### Deploying to Heroku
 You can deploy a copy of this application directly to Heroku by following these steps:
 1. Click this button: [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/michaelsmanley/How-To-Program-a-Computer)
-  1. Sign up for Heroku if you don't already have an account, or log in with your existing account if you have one.
-  1. Name the app anything you like.
+   1. Sign up for Heroku if you don't already have an account, or log in with your existing account if you have one.
+   1. Name the app anything you like.
 1. Now, as deployed, the application won't yet work, so don't go view it yet. Instead, click the button that says "Manage App"
 1. Next, you're going to need a DarkSky API key. Go [here](https://darksky.net/dev) in a new browser window and click the "Try for Free" button, sign up, and get your secret key.
 1. Next, you will need to add your DarkSky secret API key as a config variable in Heroku.
-  1. Back in the Heroku dashboard, click "Settings"
-  1. Next, click "Reveal Config Vars"
-  1. Next, create a new config var, with "KEY" set to `DARKSKY_API_KEY` and "VALUE" set to your DarkSky key
-  1. Next, click "Add"
+   1. Back in the Heroku dashboard, click "Settings"
+   1. Next, click "Reveal Config Vars"
+   1. Next, create a new config var, with "KEY" set to `DARKSKY_API_KEY` and "VALUE" set to your DarkSky key
+   1. Next, click "Add"
 1. Now your app is configured. You can click the "Open App" button in the upper-right corner of the Heroku and you should see today's lunch and weather!
 
 ### Pseudocode
