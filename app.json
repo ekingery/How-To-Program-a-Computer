@@ -7,7 +7,5 @@
     "sample"
   ],
   "repository": "https://github.com/michaelsmanley/How-To-Program-a-Computer",
-  "addons": [
-    "heroku-postgresql"
-  ]
+  "addons": [ ]
 }
