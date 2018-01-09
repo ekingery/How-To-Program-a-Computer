@@ -12,7 +12,8 @@ class TestScrape(unittest.TestCase):
 
     def test_datecalc(self):
         # test today
-        current_dt = datetime.now().astimezone(tz=pytz.timezone('US/Central'))
+        local_tz = pytz.timezone('US/Central')
+        current_dt = local_tz.localize(datetime.now())
         self.assertGreaterEqual(date_to_display(current_dt).day, 1)
         self.assertLessEqual(date_to_display(current_dt).day, 31)
 
