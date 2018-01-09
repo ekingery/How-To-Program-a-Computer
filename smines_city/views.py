@@ -16,7 +16,8 @@ from smines_city.weather import get_weather
 @app.route('/')
 def homepage():
     # This is the main function that serves the web page
-    current_dt = datetime.now().astimezone(tz=pytz.timezone('US/Central'))
+    local_tz = pytz.timezone('US/Central')
+    current_dt = local_tz.localize(datetime.now())
     display_date = date_to_display(current_dt)
     formatted_date = display_date.strftime("%A, %B %d")
 

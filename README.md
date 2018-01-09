@@ -30,8 +30,16 @@ This python module (smines_city) scrapes information from the school lunch calen
    * Set your own API key using `heroku config:set DARKSKY_API_KEY=<yours>`
 
 ### Local Development
-You can start a local flask server with this command:
+Assuming you have an updated version of Python and `pip` on your machine, install all your dependencies:
+
+```
+pip2 install -r requirements.txt 
+```
+
+Then you can start a local flask server with this command:
 `FLASK_APP=smines_city/__init__.py FLASK_DEBUG=1 DARKSKY_API_KEY=<your_key> flask run`
+
+Note that you will need to have acquired a DarkSky API key. Instructions for that can be found below in the "Deploy to Heroku" section.
 
 ### Tests
 Tests can be run using the `pytest` command.
@@ -41,7 +49,9 @@ You can deploy a copy of this application directly to Heroku by following these 
 1. Click this button: [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/michaelsmanley/How-To-Program-a-Computer)
    1. Sign up for Heroku if you don't already have an account, or log in with your existing account if you have one.
    1. Name the app anything you like.
-1. Now, as deployed, the application won't yet work, so don't go view it yet. Instead, click the button that says "Manage App"
+1. Now, as deployed, the application won't yet work, so don't go view it yet. 
+If you do, no harm done. You'll just see a "Not ready yet!" message come up in your
+web browser. Instead, click the button that says "Manage App."
 1. Next, you're going to need a DarkSky API key. Go [here](https://darksky.net/dev) in a new browser window and click the "Try for Free" button, sign up, and get your secret key.
 1. Next, you will need to add your DarkSky secret API key as a config variable in Heroku.
    1. Back in the Heroku dashboard, click "Settings"
