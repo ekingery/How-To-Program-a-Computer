@@ -2,7 +2,6 @@
 from flask import render_template, send_from_directory
 # load modules for dealing with dates and times
 from datetime import datetime
-import os
 import pytz  # timezones
 
 # import the app so we can register routes to serve
