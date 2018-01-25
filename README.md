@@ -46,7 +46,7 @@ Tests can be run using the `pytest` command.
 
 ### Deploying to Heroku
 You can deploy a copy of this application directly to Heroku by following these steps:
-1. Click this button: [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/michaelsmanley/How-To-Program-a-Computer)
+1. Click this button: [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ekingery/How-To-Program-a-Computer)
    1. Sign up for Heroku if you don't already have an account, or log in with your existing account if you have one.
    1. Name the app anything you like.
 1. Now, as deployed, the application won't yet work, so don't go view it yet. 
