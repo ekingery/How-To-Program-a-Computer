@@ -7,12 +7,9 @@ import logging
 
 # load the flask web framework
 from flask import Flask
-# package that redirects non ssl (http) requests to ssl (https)
-from flask_sslify import SSLify
 
 # define the application as a flask object
 app = Flask(__name__)
-sslify = SSLify(app)  # redirect the non-secure (http) version to https
 
 # setup the logger to stream logs to stdout
 stream_handler = logging.StreamHandler()

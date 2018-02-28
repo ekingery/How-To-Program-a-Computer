@@ -1,5 +1,5 @@
 # load a couple of flask functions for templates and file serving
-from flask import render_template, send_from_directory
+from flask import request, redirect, render_template, send_from_directory
 # load modules for dealing with dates and times
 from datetime import datetime
 import pytz  # timezones
@@ -16,6 +16,12 @@ from smines_city.weather import get_weather
 @app.route('/')
 def homepage():
     # This is the main function that serves the web page
+
+    # redirect ssl requests to http (heroku does not support SSL on free dynos)
+    if request.url.startswith('https://'):
+        url = request.url.replace('https://', 'http://', 1)
+        redirect(url, 301)
+
     local_tz = pytz.timezone('US/Central')
     current_dt = local_tz.localize(datetime.now())
     display_date = date_to_display(current_dt)
