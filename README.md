@@ -1,6 +1,6 @@
 # Career Day - Software Engineering
 
-This repository contains information on how to program a computer, including a sample program that serves the [Smines City Technology website](https://smines.city). This was developed for my daughter's kindergarten classroom.
+This repository contains information on how to program a computer, including a sample program that serves the [Smines City Technology website](http://smines.city). This was developed for my daughter's kindergarten classroom.
 
 ## How To Program A Computer - Presentation
 
